@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/abdu997/account-tracker/issues"
   },
-  "homepage": "https://github.com/abdu997/account-tracker#readme"
+  "homepage": "https://github.com/abdu997/account-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
