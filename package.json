@@ -1,0 +1,23 @@
+{
+  "name": "account-tracker",
+  "version": "1.0.0",
+  "description": "An app to create accounts and their credits.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdu997/account-tracker.git"
+  },
+  "keywords": [
+    "account",
+    "tracker"
+  ],
+  "author": "Abdul Rahman Amoud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abdu997/account-tracker/issues"
+  },
+  "homepage": "https://github.com/abdu997/account-tracker#readme"
+}
