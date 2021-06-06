@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,7 +44,7 @@ function CreateCustomerForm() {
     };
 
     const DisplayResult = () => (
-        <>
+        <Typography>
             First Name: {results.firstName} <br />
             Last Name: {results.lastName} <br />
             Balance: {results.balance} <br />
@@ -56,7 +57,7 @@ function CreateCustomerForm() {
                         </div>
                     )
                 )}
-        </>
+        </Typography>
     );
 
     return (
@@ -77,7 +78,7 @@ function CreateCustomerForm() {
                     Search
                 </Button>
             </form>
-            {results ? <DisplayResult /> : null}
+            {results["customerID"] ? <DisplayResult /> : null}
         </Paper>
     );
 }
