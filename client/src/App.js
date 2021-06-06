@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 
 import NavBar from "./components/NavBar";
+import CreateCustomerForm from "./components/CreateCustomerForm";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,7 +27,9 @@ function App() {
             <div className={classes.content}>
                 <Container>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}></Grid>
+                        <Grid item xs={12} md={6}>
+                            <CreateCustomerForm />
+                        </Grid>
                         <Grid item xs={12} md={6}></Grid>
                     </Grid>
                 </Container>
