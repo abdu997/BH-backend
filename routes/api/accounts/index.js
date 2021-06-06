@@ -73,7 +73,7 @@ router.post("/", (req, res) => {
     const initialTransaction = {
         customerID,
         transactionType: "debit",
-        transactionAmount: initialCredit ? Number(initialCredit) : 0,
+        transactionAmount: Number(initialCredit) ? Number(initialCredit) : 0,
     };
     transactions.push(initialTransaction);
 
