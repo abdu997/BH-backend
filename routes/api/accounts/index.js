@@ -30,6 +30,12 @@ router.get("/:customerID", (req, res) => {
         (account) => account.customerID === customerID
     );
 
+    // If customer does not exist
+    if (!customerAccount) {
+        res.status(404).json({ error: "Customer Does Not Exist" });
+        return;
+    }
+
     // Retreive customer transactions
     const customerTransactions = transactions.filter(
         (transaction) => transaction.customerID === customerID
