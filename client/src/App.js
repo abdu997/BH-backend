@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container";
 
 import NavBar from "./components/NavBar";
 import CreateCustomerForm from "./components/CreateCustomerForm";
+import SearchCustomer from "./components/SearchCustomer";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +31,9 @@ function App() {
                         <Grid item xs={12} md={6}>
                             <CreateCustomerForm />
                         </Grid>
-                        <Grid item xs={12} md={6}></Grid>
+                        <Grid item xs={12} md={6}>
+                            <SearchCustomer />
+                        </Grid>
                     </Grid>
                 </Container>
             </div>
