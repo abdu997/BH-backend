@@ -1,9 +1,5 @@
 language: node_js
 node_js:
     - 14
-install: npm install
-env:
-    - PORT=3001
-    - NODE_ENV=development
-script:
-    - npm start
+install:
+    - npm install
