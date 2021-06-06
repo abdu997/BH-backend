@@ -8,6 +8,7 @@ The account tracker built using ReactJS and Node is a tool that can create custo
 -   [Requirments](#requirments)
 -   [Install](#install)
 -   [Run](#run)
+-   [Test](#test)
 -   [Maintainers](#maintainers)
 -   [License](#license)
 
@@ -32,6 +33,12 @@ $ npm install
 ```shell
 $ npm start
 ```
+
+## Test
+
+The app comes with a set of features tests written in Gherkin visit the tests down below:
+
+-   [Test Plan](test.feature)
 
 ## Maintainers
 
