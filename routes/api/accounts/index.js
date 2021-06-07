@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+// Seed Data
 var accounts = [
     {
         customerID: "abdulamoud",
@@ -7,7 +8,6 @@ var accounts = [
         lastName: "Amoud",
     },
 ];
-
 var transactions = [
     {
         customerID: "abdulamoud",
@@ -79,7 +79,7 @@ router.post("/", (req, res) => {
     const initialTransaction = {
         customerID,
         transactionType: "debit",
-        transactionAmount: Number(initialCredit) ? Number(initialCredit) : 0,
+        transactionAmount: Number(initialCredit) || 0,
     };
     transactions.push(initialTransaction);
 
