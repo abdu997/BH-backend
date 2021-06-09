@@ -10,6 +10,7 @@ The account tracker built using ReactJS and Node is a tool that can create custo
 -   [Run](#run)
 -   [Test](#test)
 -   [Maintainers](#maintainers)
+-   [Project Board](#project-board)
 -   [License](#license)
 
 ## Demo
@@ -43,6 +44,12 @@ The app comes with a set of features tests written in Gherkin visit the tests do
 ## Maintainers
 
 -   [Abdul Amoud](https://github.com/abdu997)
+
+## Project Board
+
+Check out our project board to see what we're up to!
+
+-   [Project Board](https://github.com/abdu997/account-tracker/projects)
 
 ## License
 
