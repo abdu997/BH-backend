@@ -1,34 +1,13 @@
 const router = require("express").Router();
-
-// Seed Data
-var accounts = [
-    {
-        customerID: "abdulamoud",
-        firstName: "Abdul",
-        lastName: "Amoud",
-    },
-];
-var transactions = [
-    {
-        customerID: "abdulamoud",
-        transactionType: "debit",
-        transactionAmount: 200,
-    },
-    {
-        customerID: "abdulamoud",
-        transactionType: "credit",
-        transactionAmount: 100,
-    },
-];
+const Account = require("../../../controllers/Account");
 
 router.get("/:customerID", (req, res) => {
     // Fetch customer using their customerID
     const { customerID } = req.params;
 
-    // Find the customer
-    const customerAccount = accounts.find(
-        (account) => account.customerID === customerID
-    );
+    // Fetch customer
+    const account = new Account(customerID);
+    const customerAccount = account.customer;
 
     // If customer does not exist
     if (!customerAccount) {
@@ -36,27 +15,8 @@ router.get("/:customerID", (req, res) => {
         return;
     }
 
-    // Retreive customer transactions
-    const customerTransactions = transactions.filter(
-        (transaction) => transaction.customerID === customerID
-    );
-
-    // Calculate customer balance
-    let customerBalance = 0;
-    for (let { transactionType, transactionAmount } of customerTransactions) {
-        if (transactionType === "debit") {
-            customerBalance += transactionAmount;
-        } else if (transactionType === "credit") {
-            customerBalance -= transactionAmount;
-        }
-    }
-
     // Spread all customer details into response
-    res.json({
-        ...customerAccount,
-        balance: customerBalance,
-        transactions: customerTransactions,
-    });
+    res.json(customerAccount);
 });
 
 router.post("/", (req, res) => {
@@ -67,24 +27,12 @@ router.post("/", (req, res) => {
         return;
     }
 
-    // Create new customer
-    const newCustomer = {
-        customerID,
-        firstName,
-        lastName,
-    };
-    accounts.push(newCustomer);
-
-    // Log initial transaction
-    const initialTransaction = {
-        customerID,
-        transactionType: "debit",
-        transactionAmount: Number(initialCredit) || 0,
-    };
-    transactions.push(initialTransaction);
+    // Create customer
+    const account = new Account(customerID);
+    account.createCustomer(firstName, lastName, initialCredit);
 
     // Return newly minted customer details
-    res.json({ ...newCustomer, transactions: initialTransaction });
+    res.json(account.customer);
 });
 
 module.exports = router;
